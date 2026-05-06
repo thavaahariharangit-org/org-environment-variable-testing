@@ -1,0 +1,16 @@
+version: 2
+
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    versioning-strategy: "increase"
+    schedule:
+      interval: "weekly"
+    registries:
+      - npm-artifactory
+
+registries:
+  npm-artifactory:
+    type: "npm-registry"
+    url: "https://jfrogghdemo.jfrog.io"
+    token: "${{secrets.NPM_REPO_TOKEN}}"
